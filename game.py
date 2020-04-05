@@ -14,7 +14,7 @@ import time
 sys.path.insert(0, os.getcwd())
 
 import random
-import player_rebuilt
+import player
 from global_vars import LETTERS
 from global_vars import VOWELS
 from global_vars import VOWEL_COST
@@ -192,11 +192,11 @@ def create_players():
 
     for x in range(number_of_humans):   # TODO turn into list comprehensions?
         player_name = input("enter name of player {number}: ".format(number= x+1))
-        player_list.append(player_rebuilt.WOFHumanPlayer(player_name))
+        player_list.append(player.WOFHumanPlayer(player_name))
 
     for x in range(number_of_computers):
         computer_name = "computer {number}".format(number= x+1)
-        player_list.append(player_rebuilt.WOFComputerPlayer(computer_name, computer_difficulty))
+        player_list.append(player.WOFComputerPlayer(computer_name, computer_difficulty))
 
     if len(player_list) == 0:
         print('We need players to play!')
